@@ -32,9 +32,9 @@ REGRAS DE RESPOSTA:
 
 export async function analisarConversa(textoConversa: string): Promise<ResultadoAnalise> {
   const chaveApi = process.env.OPENROUTER_API_KEY;
-  const modelo = process.env.OPENROUTER_MODEL || "openai/gpt-4o-mini";
+  const modelo = process.env.OPENROUTER_MODEL || "openai/gpt-4o-nano";
 
-  if (!chaveApi || chaveApi.trim() === "" || chaveApi === "sua_chave_aqui") {
+  if (!chaveApi || chaveApi.trim() === "" || chaveApi === "") {
     const erro: any = new Error("Chave da API OpenRouter não configurada. Defina OPENROUTER_API_KEY no arquivo .env");
     erro.status = 500;
     throw erro;
